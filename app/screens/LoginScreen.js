@@ -10,13 +10,14 @@ import AppFormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import AppIconButton from "../components/AppIconButton";
 import AppButton from "../components/AppButton";
+import routes from "../navigation/routes";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string().required().email().label("Email"),
 	password: Yup.string().required().min(4).label("Password"),
 });
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
 	return (
 		<Screen style={styles.container}>
 			<AppIconButton color="light">
@@ -28,7 +29,15 @@ export default function LoginScreen() {
 			</AppIconButton>
 			<Text style={styles.heading}>Welcome Back!</Text>
 			<Text style={styles.subHeading}>
-				Login below or <Text style={styles.underlined}>create an account</Text>
+				Login below or{" "}
+				<Text
+					style={styles.underlined}
+					onPress={() => {
+						console.log("Navigating ");
+						navigation.navigate(routes.REGISTER);
+					}}>
+					create an account
+				</Text>
 			</Text>
 			<AppForm
 				initialValues={{ email: "", password: "" }}
