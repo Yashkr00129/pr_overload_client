@@ -4,8 +4,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import routes from "./routes";
 import HomeScreen from "../screens/HomeScreen";
-import WorkoutScreen from "../screens/WorkoutScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import WorkoutNavigator from "./WorkoutNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +30,7 @@ const AppNavigator = () => {
 			/>
 			<Tab.Screen
 				name={routes.WORKOUT}
-				component={WorkoutScreen}
+				component={WorkoutNavigator}
 				options={{
 					tabBarIcon: ({ color, size }) => (
 						<MaterialCommunityIcons

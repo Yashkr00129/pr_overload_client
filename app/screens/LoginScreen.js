@@ -1,5 +1,5 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { useState } from "react";
 import * as Yup from "yup";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -10,14 +10,30 @@ import AppFormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import AppIconButton from "../components/AppIconButton";
 import AppButton from "../components/AppButton";
+
 import routes from "../navigation/routes";
+import authApi from "../api/auth";
+import useAuth from "../auth/useAuth";
+import { ErrorMessage } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
-	email: Yup.string().required().email().label("Email"),
+	username: Yup.string().required().label("Username"),
 	password: Yup.string().required().min(4).label("Password"),
 });
 
 export default function LoginScreen({ navigation }) {
+	const { logIn } = useAuth();
+	const [loginFailed, setLoginFailed] = useState(false);
+
+	const handleSubmit = async ({ username, password }) => {
+		const result = await authApi.login(username, password);
+		const accessToken = result.data.access;
+		if (!result.ok) return setLoginFailed(true);
+
+		setLoginFailed(false);
+		logIn(accessToken);
+	};
+
 	return (
 		<Screen style={styles.container}>
 			<AppIconButton color="light">
@@ -33,25 +49,26 @@ export default function LoginScreen({ navigation }) {
 				<Text
 					style={styles.underlined}
 					onPress={() => {
-						console.log("Navigating ");
 						navigation.navigate(routes.REGISTER);
 					}}>
 					create an account
 				</Text>
 			</Text>
 			<AppForm
-				initialValues={{ email: "", password: "" }}
+				initialValues={{ username: "", password: "" }}
 				validationSchema={validationSchema}
-				onSubmit={(values) => console.log(values)}>
+				onSubmit={handleSubmit}>
 				<View style={styles.inputContainer}>
+					<ErrorMessage
+						error="Invalid email and/or password."
+						visible={loginFailed}
+					/>
 					<AppFormField
 						autoCapitalize="none"
 						autoCorrect={false}
 						icon="email"
-						keyboardType="email-address"
-						name="email"
-						placeholder="Email"
-						textContentType="emailAddress"
+						name="username"
+						placeholder="Username"
 					/>
 					<AppFormField
 						autoCapitalize="none"
