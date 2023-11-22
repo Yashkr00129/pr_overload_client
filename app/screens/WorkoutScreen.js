@@ -33,7 +33,7 @@ export default function WorkoutScreen({ navigation }) {
 			<FlatList
 				data={workouts}
 				keyExtractor={(workout) => workout.id}
-				renderItem={(workout) => <WorkoutItem workout={workout} />}
+				renderItem={({ item }) => <WorkoutItem workout={item} />}
 			/>
 		</Screen>
 	);

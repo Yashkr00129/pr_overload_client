@@ -7,6 +7,7 @@ import AppIconButton from "../AppIconButton";
 import colors from "../../config/colors";
 
 export default function WorkoutItem({ workout }) {
+  console.log(workout);
 	return (
 		<View style={styles.container}>
 			<View style={styles.detailsContainer}>
