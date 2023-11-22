@@ -15,11 +15,12 @@ export default function Screen({ children, style }) {
 
 
 const styles = StyleSheet.create({
-  screen: {
-    paddingTop: Constants.statusBarHeight,
-    height: "100%"
-  },
-  view: {
-    flex: 1
-  }
-})
+	screen: {
+		paddingTop: Constants.statusBarHeight,
+		paddingHorizontal: 10,
+		height: "100%",
+	},
+	view: {
+		flex: 1,
+	},
+});

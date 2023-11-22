@@ -16,7 +16,7 @@ export default function CreateWorkoutScreen() {
 	};
 
 	return (
-		<Screen style={styles.container}>
+		<Screen>
 			<AppForm
 				initialValues={{
 					name: "",
@@ -32,8 +32,4 @@ export default function CreateWorkoutScreen() {
 	);
 }
 
-const styles = StyleSheet.create({
-	container: {
-		padding: 10,
-	},
-});
+const styles = StyleSheet.create({});

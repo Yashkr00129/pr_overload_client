@@ -35,7 +35,7 @@ export default function LoginScreen({ navigation }) {
 	};
 
 	return (
-		<Screen style={styles.container}>
+		<Screen>
 			<AppIconButton color="light">
 				<Ionicons
 					name="arrow-back"
@@ -97,9 +97,6 @@ export default function LoginScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		padding: 10,
-	},
 	heading: {
 		color: colors.primary,
 		fontSize: 32,

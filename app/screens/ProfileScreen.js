@@ -7,7 +7,7 @@ import useAuth from "../auth/useAuth";
 export default function ProfileScreen() {
 	const { logOut } = useAuth();
 	return (
-		<Screen style={styles.container}>
+		<Screen>
 			<AppButton
 				title="Log Out"
 				variant="contained"
@@ -18,7 +18,4 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		padding: 10,
-	},
 });

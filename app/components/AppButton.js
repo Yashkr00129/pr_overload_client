@@ -16,7 +16,7 @@ export default function AppButton({
 	const outlinedStyles = {
 		borderColor: colors[color],
 		borderWidth: 1,
-		backgroundColor: colors.light,
+		backgroundColor: colors.lightGray,
 		color: colors[color],
 	};
 
