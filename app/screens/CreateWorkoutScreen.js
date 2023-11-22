@@ -4,15 +4,17 @@ import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import workoutApi from "../api/workout";
+import routes from "../navigation/routes";
 
 const validationSchema = Yup.object().shape({
-	name: Yup.string().required().label("Workout Name"),
+	name: Yup.string().required().min(5).label("Workout Name"),
 });
 
-export default function CreateWorkoutScreen() {
-	const handleSubmit = (values) => {
-		console.log(values);
-		// First create the workout, then send the user to the page for WorkoutDetails
+export default function CreateWorkoutScreen({ navigation }) {
+	const handleSubmit = async (values) => {
+		await workoutApi.createWorkout(values.name);
+		navigation.navigate(routes.WORKOUT);
 	};
 
 	return (
@@ -21,6 +23,7 @@ export default function CreateWorkoutScreen() {
 				initialValues={{
 					name: "",
 				}}
+				validationSchema={validationSchema}
 				onSubmit={handleSubmit}>
 				<AppFormField
 					name="name"

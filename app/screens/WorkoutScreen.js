@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useEffect } from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
+import { useCallback } from "react";
+import { useFocusEffect } from "@react-navigation/native";
+
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
 import routes from "../navigation/routes";
@@ -9,13 +11,17 @@ import ActivityIndicator from "../components/ActivityIndicator";
 import WorkoutItem from "../components/workout/WorkoutItem";
 
 export default function WorkoutScreen({ navigation }) {
-	const { data: workouts, loading, request } = useApi(workoutApi.getMyWorkouts);
+	const {
+		data: workouts,
+		loading,
+		request: getWorkouts,
+	} = useApi(workoutApi.getMyWorkouts);
 
-	console.log(workouts);
-
-	useEffect(() => {
-		request();
-	}, []);
+	useFocusEffect(
+		useCallback(() => {
+			getWorkouts();
+		}, [])
+	);
 
 	return (
 		<Screen>
@@ -24,9 +30,11 @@ export default function WorkoutScreen({ navigation }) {
 				title={"Add Workout"}
 				onPress={() => navigation.navigate(routes.WORKOUT_FORM)}
 			/>
-			{workouts.map((workout) => (
-				<WorkoutItem workout={workout} />
-			))}
+			<FlatList
+				data={workouts}
+				keyExtractor={(workout) => workout.id}
+				renderItem={(workout) => <WorkoutItem workout={workout} />}
+			/>
 		</Screen>
 	);
 }

@@ -2,4 +2,7 @@ import apiClient from "./client";
 
 const getMyWorkouts = () => apiClient.get("overload/workouts/");
 
-export default workoutApi = { getMyWorkouts };
+const createWorkout = ( name ) =>
+	apiClient.post("overload/workouts/", { name });
+
+export default workoutApi = { getMyWorkouts, createWorkout };
