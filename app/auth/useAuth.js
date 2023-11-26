@@ -16,8 +16,6 @@ export default useAuth = () => {
 
 		const res = await authApi.getCurrentUser();
 		setUser(res.data);
-
-		console.log(res.data);
 	};
 
 	return { user, setUser, logOut, logIn };

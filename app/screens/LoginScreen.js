@@ -9,7 +9,6 @@ import AppForm from "../components/forms/AppForm";
 import AppFormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import AppIconButton from "../components/AppIconButton";
-import AppButton from "../components/AppButton";
 
 import routes from "../navigation/routes";
 import authApi from "../api/auth";
@@ -31,6 +30,7 @@ export default function LoginScreen({ navigation }) {
 		if (!result.ok) return setLoginFailed(true);
 
 		setLoginFailed(false);
+		console.log("Access Token - ", accessToken);
 		logIn(accessToken);
 	};
 

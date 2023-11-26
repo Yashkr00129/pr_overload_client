@@ -1,11 +1,13 @@
 import apiClient from "./client";
 
-const login = (username, password) =>
+const login = async (username, password) =>
 	apiClient.post("auth/jwt/create", { username, password });
 
-const getCurrentUser = () => apiClient.get("auth/users/me");
+const getCurrentUser = async () => apiClient.get("auth/users/me");
 
-export default authApi = {
+const authApi = {
 	login,
 	getCurrentUser,
 };
+
+export default authApi;

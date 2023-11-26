@@ -1,8 +1,13 @@
 import apiClient from "./client";
 
-const getMyWorkouts = () => apiClient.get("overload/workouts/");
+const getMyWorkouts = async () => apiClient.get("overload/workouts/");
 
-const createWorkout = ( name ) =>
+const createWorkout = async (name) =>
 	apiClient.post("overload/workouts/", { name });
 
-export default workoutApi = { getMyWorkouts, createWorkout };
+const deleteWorkout = async (id) =>
+	apiClient.delete(`overload/workouts/${id}/`);
+
+const workoutApi = { getMyWorkouts, createWorkout, deleteWorkout };
+
+export default workoutApi;

@@ -5,31 +5,33 @@ import AppText from "../AppText";
 import AppIconButton from "../AppIconButton";
 
 import colors from "../../config/colors";
+import { TouchableOpacity } from "react-native";
 
-export default function WorkoutItem({ workout }) {
-  console.log(workout);
+export default function WorkoutItem({ workout, onPress }) {
 	return (
-		<View style={styles.container}>
-			<View style={styles.detailsContainer}>
-				<AppText
-					style={{ fontWeight: "bold" }}
-					numberOfLines={1}>
-					{workout.name}
-				</AppText>
-				<AppText
-					style={{ color: colors.darkGray, fontSize: 14 }}
-					numberOfLines={1}>
-					{new Date(workout.date_created).toLocaleDateString()}
-				</AppText>
+		<TouchableOpacity onPress={onPress}>
+			<View style={styles.container}>
+				<View style={styles.detailsContainer}>
+					<AppText
+						style={{ fontWeight: "bold" }}
+						numberOfLines={1}>
+						{workout.name}
+					</AppText>
+					<AppText
+						style={{ color: colors.darkGray, fontSize: 14 }}
+						numberOfLines={1}>
+						{new Date(workout.date_created).toLocaleDateString()}
+					</AppText>
+				</View>
+				<AppIconButton>
+					<AntDesign
+						name="edit"
+						size={24}
+						color={colors.white}
+					/>
+				</AppIconButton>
 			</View>
-			<AppIconButton>
-				<AntDesign
-					name="edit"
-					size={24}
-					color={colors.white}
-				/>
-			</AppIconButton>
-		</View>
+		</TouchableOpacity>
 	);
 }
 

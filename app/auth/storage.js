@@ -1,5 +1,5 @@
 import * as SecureStore from "expo-secure-store";
-import jwtDecode from "jwt-decode";
+import authApi from "../api/auth";
 
 const key = "authToken";
 
@@ -23,8 +23,8 @@ const getUser = async () => {
 	const token = await getToken();
 
 	if (token) {
+		console.log("Access Token - " + token);
 		const res = await authApi.getCurrentUser();
-		console.log(res.data);
 		return res.data;
 	}
 

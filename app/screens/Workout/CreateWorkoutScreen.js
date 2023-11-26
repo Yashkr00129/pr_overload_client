@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import * as Yup from "yup";
 
-import Screen from "../components/Screen";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
-import workoutApi from "../api/workout";
-import routes from "../navigation/routes";
+import Screen from "../../components/Screen";
+import { AppForm, AppFormField, SubmitButton } from "../../components/forms";
+import workoutApi from "../../api/workout";
+import routes from "../../navigation/routes";
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required().min(5).label("Workout Name"),

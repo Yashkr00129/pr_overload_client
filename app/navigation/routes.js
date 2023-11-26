@@ -1,10 +1,11 @@
 // All The screens which contain base in their name are to be used when using a navigator inside another navigator.
 export default Object.freeze({
+	ADD_EXERCISE_TO_WORKOUT: "Add Exercise",
 	HOME: "Home",
 	LOGIN: "Login",
 	REGISTER: "Register",
-	WORKOUT_BASE: "BaseWorkout",
 	WORKOUT: "Workout",
-	WORKOUT_FORM: "Create Workout",
+	WORKOUT_CREATE: "Create Workout",
+	WORKOUT_EDIT: "Edit Workout",
 	PROFILE: "Profile",
 });
