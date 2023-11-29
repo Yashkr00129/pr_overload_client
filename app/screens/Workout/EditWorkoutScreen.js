@@ -38,7 +38,7 @@ export default function EditWorkoutScreen({ route, navigation }) {
 		<Screen>
 			<ActivityIndicator visible={loading} />
 			<View style={styles.headingContainer}>
-				<AppText style={styles.heading}>{workout.name}</AppText>
+				<AppText style={styles.heading}>{workout?.name}</AppText>
 			</View>
 			<FlatList
 				data={exercises}
@@ -46,8 +46,16 @@ export default function EditWorkoutScreen({ route, navigation }) {
 				renderItem={({ item }) => (
 					<WorkoutExerciseItem
 						workoutExerciseId={item.id}
+						workoutId={workout.id}
 						exercise={item.exercise}
+						refresh={loadExercises}
 						sets={item.sets}
+						onPress={() =>
+							navigation.navigate(routes.ADD_SET_TO_WORKOUT, {
+								exercise: item,
+								workout,
+							})
+						}
 						renderRightActions={() => (
 							<ListItemDeleteAction
 								onPress={() =>

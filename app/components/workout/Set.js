@@ -37,7 +37,7 @@ export default function Set({
 						<AppText
 							style={styles.title}
 							numberOfLines={1}>
-							{weight} -{" "}
+							{weight} *{" "}
 							<AppText
 								style={styles.subTitle}
 								numberOfLines={2}>

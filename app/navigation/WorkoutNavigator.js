@@ -5,6 +5,7 @@ import WorkoutScreen from "../screens/Workout/WorkoutScreen";
 import CreateWorkoutScreen from "../screens/Workout/CreateWorkoutScreen";
 import EditWorkoutScreen from "../screens/Workout/EditWorkoutScreen";
 import AddExerciseToWorkoutScreen from "../screens/Workout/AddExerciseToWorkoutScreen";
+import AddSetToWorkoutExerciseScreen from "../screens/Workout/AddSetToWorkoutExerciseScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,10 @@ const WorkoutNavigator = () => {
 			<Stack.Screen
 				name={routes.ADD_EXERCISE_TO_WORKOUT}
 				component={AddExerciseToWorkoutScreen}
+			/>
+			<Stack.Screen
+				name={routes.ADD_SET_TO_WORKOUT}
+				component={AddSetToWorkoutExerciseScreen}
 			/>
 		</Stack.Navigator>
 	);
