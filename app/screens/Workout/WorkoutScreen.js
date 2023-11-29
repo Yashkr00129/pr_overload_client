@@ -29,10 +29,6 @@ export default function WorkoutScreen({ navigation }) {
 	return (
 		<Screen>
 			<ActivityIndicator visible={loading} />
-			<AppButton
-				title={"Add Workout"}
-				onPress={() => navigation.navigate(routes.WORKOUT_CREATE)}
-			/>
 			<FlatList
 				data={workouts}
 				keyExtractor={(workout) => workout.id}
@@ -51,6 +47,10 @@ export default function WorkoutScreen({ navigation }) {
 					/>
 				)}
 				ItemSeparatorComponent={<ListItemSeperator />}
+			/>
+			<AppButton
+				title={"Add Workout"}
+				onPress={() => navigation.navigate(routes.WORKOUT_CREATE)}
 			/>
 		</Screen>
 	);
