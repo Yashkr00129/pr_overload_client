@@ -48,7 +48,7 @@ export default function EditWorkoutScreen({ route, navigation }) {
 						workoutExerciseId={item.id}
 						workoutId={workout.id}
 						exercise={item.exercise}
-						refresh={loadExercises}
+						refresh={() => loadExercises(workout.id)}
 						sets={item.sets}
 						onPress={() =>
 							navigation.navigate(routes.ADD_SET_TO_WORKOUT, {

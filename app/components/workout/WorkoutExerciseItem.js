@@ -19,9 +19,6 @@ export default function WorkoutExerciseItem({
 	renderRightActions,
 	onPress,
 }) {
-	console.log(workoutExerciseId);
-	console.log(workoutId);
-
 	return (
 		<Swipeable renderRightActions={renderRightActions}>
 			<View>
@@ -66,7 +63,7 @@ export default function WorkoutExerciseItem({
 													workoutExerciseId,
 													item.id
 												)
-												.then(refresh(workoutId))
+												.then(refresh)
 										}
 									/>
 								)}
