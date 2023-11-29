@@ -21,22 +21,22 @@ const validationSchema = Yup.object().shape({
 export default function RegisterScreen({ navigation }) {
 	return (
 		<Screen>
-			<AppIconButton color="light">
+			<AppIconButton color="lightGray" onPress={()=>navigation.goBack()}>
 				<Ionicons
 					name="arrow-back"
 					size={24}
 					color={colors.primary}
 				/>
 			</AppIconButton>
-			<Text style={styles.heading}>Create an account</Text>
-			<Text style={styles.subHeading}>
-				Enter your account details below or{" "}
-				<Text
-					style={styles.underlined}
-					onPress={() => navigation.navigate(routes.LOGIN)}>
-					log in
+				<Text style={styles.heading}>Create an account</Text>
+				<Text style={styles.subHeading}>
+					Enter your account details below or{" "}
+					<Text
+						style={styles.underlined}
+						onPress={() => navigation.navigate(routes.LOGIN)}>
+						log in
+					</Text>
 				</Text>
-			</Text>
 			<AppForm
 				initialValues={{ username: "", email: "", password: "" }}
 				validationSchema={validationSchema}

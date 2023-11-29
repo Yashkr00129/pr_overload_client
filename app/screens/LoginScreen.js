@@ -36,24 +36,24 @@ export default function LoginScreen({ navigation }) {
 
 	return (
 		<Screen>
-			<AppIconButton color="light">
+			<AppIconButton color="lightGray">
 				<Ionicons
 					name="arrow-back"
 					size={24}
 					color={colors.primary}
 				/>
 			</AppIconButton>
-			<Text style={styles.heading}>Welcome Back!</Text>
-			<Text style={styles.subHeading}>
-				Login below or{" "}
-				<Text
-					style={styles.underlined}
-					onPress={() => {
-						navigation.navigate(routes.REGISTER);
-					}}>
-					create an account
+				<Text style={styles.heading}>Welcome Back!</Text>
+				<Text style={styles.subHeading}>
+					Login below or{" "}
+					<Text
+						style={styles.underlined}
+						onPress={() => {
+							navigation.navigate(routes.REGISTER);
+						}}>
+						create an account
+					</Text>
 				</Text>
-			</Text>
 			<AppForm
 				initialValues={{ username: "", password: "" }}
 				validationSchema={validationSchema}
