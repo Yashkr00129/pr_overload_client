@@ -2,11 +2,13 @@
 export default Object.freeze({
 	ADD_EXERCISE_TO_WORKOUT: "Add Exercise",
 	ADD_SET_TO_WORKOUT: "Add Set",
+	CREATE_PROFILE: "Create Profile",
 	HOME: "Home",
 	LOGIN: "Login",
+	PROFILE: "Profile",
 	REGISTER: "Register",
+	WELCOME: "Welcome",
 	WORKOUT: "Workout",
 	WORKOUT_CREATE: "Create Workout",
 	WORKOUT_EDIT: "Edit Workout",
-	PROFILE: "Profile",
 });
