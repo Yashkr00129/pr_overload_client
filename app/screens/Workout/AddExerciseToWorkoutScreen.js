@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import useApi from "../../hooks/useApi";
-import exerciseApi from "../../api/exercise";
-import ActivityIndicator from "../../components/ActivityIndicator";
-import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
-import { FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
+
+import ActivityIndicator from "../../components/ActivityIndicator";
 import ListItemSeperator from "../../components/ListItemSeperator";
 import ListItem from "../../components/ListItem";
+
+import useApi from "../../hooks/useApi";
+import exerciseApi from "../../api/exercise";
+import Screen from "../../components/Screen";
+import AppButton from "../../components/AppButton";
 
 export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 	const workout = route.params;
@@ -25,12 +27,12 @@ export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 	);
 
 	const addExerciseToWorkout = async (exercise) => {
-		const res = await exerciseApi.addExerciseToWorkout(workout.id, exercise.id);
+		await exerciseApi.addExerciseToWorkout(workout.id, exercise.id);
 		navigation.goBack();
 	};
 
 	return (
-		<View>
+		<Screen stackDisplay={true}>
 			<ActivityIndicator visible={loading} />
 			<FlatList
 				data={exercises}
@@ -47,7 +49,8 @@ export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 				)}
 				ItemSeparatorComponent={<ListItemSeperator />}
 			/>
-		</View>
+			<AppButton title={"Add Exercise"} />
+		</Screen>
 	);
 }
 

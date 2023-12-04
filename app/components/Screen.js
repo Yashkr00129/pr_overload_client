@@ -3,14 +3,13 @@ import Constants from 'expo-constants'
 import React from 'react'
 
 
-export default function Screen({ children, style }) {
-  return (
-    <SafeAreaView style={[styles.screen, style]}>
-      <View style={[styles.view, style]}>
-        {children}
-      </View>
-    </SafeAreaView>
-  )
+export default function Screen({ children, stackDisplay = false, style }) {
+	return (
+		<SafeAreaView
+			style={[styles.screen, style, stackDisplay && { paddingTop: 0 }]}>
+			<View style={[styles.view, style]}>{children}</View>
+		</SafeAreaView>
+	);
 }
 
 

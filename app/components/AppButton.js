@@ -8,6 +8,7 @@ export default function AppButton({
 	onPress,
 	color = "primary",
 	variant = "contained",
+	borderRadius = 25,
 }) {
 	const containedStyles = {
 		backgroundColor: colors[color],
@@ -30,6 +31,7 @@ export default function AppButton({
 				styles.button,
 				variant === "contained" && containedStyles,
 				variant === "outlined" && outlinedStyles,
+				{ borderRadius },
 			]}
 			onPress={onPress}>
 			<Text style={[styles.text, variant === "outlined" && outlinedTextStyles]}>
@@ -42,7 +44,6 @@ export default function AppButton({
 const styles = StyleSheet.create({
 	button: {
 		backgroundColor: defaultStyles.colors.primary,
-		borderRadius: 25,
 		justifyContent: "center",
 		alignItems: "center",
 		padding: 15,

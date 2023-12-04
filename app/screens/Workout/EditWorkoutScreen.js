@@ -35,10 +35,13 @@ export default function EditWorkoutScreen({ route, navigation }) {
 	// Then i want to be able to add sets to the exercises added.
 
 	return (
-		<Screen>
+		<Screen stackDisplay={true}>
 			<ActivityIndicator visible={loading} />
-			<View style={styles.headingContainer}>
+			<View style={styles.textContainer}>
 				<AppText style={styles.heading}>{workout?.name}</AppText>
+				<AppText style={styles.subHeading}>
+					{new Date(workout.date_created).toLocaleDateString()}
+				</AppText>
 			</View>
 			<FlatList
 				data={exercises}
@@ -80,15 +83,19 @@ export default function EditWorkoutScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-	headingContainer: {
+	textContainer: {
 		borderBottomWidth: 1,
 		borderBottomColor: colors.lightGray,
 		padding: 20,
-		paddingTop: 0,
 	},
 	heading: {
 		fontSize: 24,
 		fontWeight: "800",
 		color: colors.primary,
+	},
+	subHeading: {
+		fontSize: 20,
+		fontWeight: "600",
+		color: colors.medium,
 	},
 });

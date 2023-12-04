@@ -7,7 +7,7 @@ import routes from "../navigation/routes";
 export default function WelcomeScreen({ navigation }) {
 	return (
 		<ImageBackground
-			blurRadius={8}
+			blurRadius={1}
 			style={styles.background}
 			source={require("../assets/background.jpg")}>
 			<View style={styles.logoContainer}>
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
 		padding: 20,
 	},
 	logo: {
-		width: 250,
-		height: 250,
+		width: 270,
+		height: 270,
 	},
 	logoContainer: {
 		position: "absolute",

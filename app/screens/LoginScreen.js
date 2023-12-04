@@ -26,11 +26,12 @@ export default function LoginScreen({ navigation }) {
 
 	const handleSubmit = async ({ username, password }) => {
 		const result = await authApi.login(username, password);
-		const accessToken = result.data.access;
 		if (!result.ok) return setLoginFailed(true);
 
-		setLoginFailed(false);
+		const accessToken = result.data.access;
 		console.log("Access Token - ", accessToken);
+
+		setLoginFailed(false);
 		logIn(accessToken);
 	};
 

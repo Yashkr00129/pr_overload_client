@@ -13,6 +13,7 @@ import AppButton from "../components/AppButton";
 import routes from "../navigation/routes";
 import authApi from "../api/auth";
 import { ErrorMessage } from "../components/forms";
+import useAuth from "../auth/useAuth";
 
 const validationSchema = Yup.object().shape({
 	first_name: Yup.string().required().label("First Name"),
@@ -23,14 +24,19 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function RegisterScreen({ navigation }) {
+	const { logIn } = useAuth();
 	const [registerFailed, setRegisterFailed] = useState(false);
 
 	const handleSubmit = async (values) => {
 		const res = await authApi.registerUser(values);
+
+		console.log(res.data);
 		if (!res.ok) return setRegisterFailed(true);
 
-		setRegisterFailed(false);
-		navigation.navigate(routes.CREATE_PROFILE, res.data);
+		const result = await authApi.login(values.username, values.password);
+		const accessToken = result.data.access;
+
+		logIn(accessToken);
 	};
 
 	return (
