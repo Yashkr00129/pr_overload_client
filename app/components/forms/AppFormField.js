@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+
 import { useFormikContext } from "formik";
 
 import AppTextInput from "../AppTextInput";

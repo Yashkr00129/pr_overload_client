@@ -1,4 +1,3 @@
-import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import routes from "./routes";
 import WorkoutScreen from "../screens/Workout/WorkoutScreen";
@@ -35,6 +34,7 @@ const WorkoutNavigator = () => {
 				name={routes.ADD_SET_TO_WORKOUT}
 				component={AddSetToWorkoutExerciseScreen}
 			/>
+
 		</Stack.Navigator>
 	);
 };

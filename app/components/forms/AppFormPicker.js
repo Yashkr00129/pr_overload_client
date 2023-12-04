@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+
 
 import AppPicker from "../AppPicker";
 import { useFormikContext } from "formik";
