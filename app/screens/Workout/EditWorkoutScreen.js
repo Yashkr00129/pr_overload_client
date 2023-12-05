@@ -35,7 +35,7 @@ export default function EditWorkoutScreen({ route, navigation }) {
 	// Then i want to be able to add sets to the exercises added.
 
 	return (
-		<Screen stackDisplay={true}>
+		<Screen stacked>
 			<ActivityIndicator visible={loading} />
 			<View style={styles.textContainer}>
 				<AppText style={styles.heading}>{workout?.name}</AppText>

@@ -20,7 +20,7 @@ export default function AddSetToWorkoutExerciseScreen({ route, navigation }) {
 	};
 
 	return (
-		<Screen stackDisplay={true}>
+		<Screen stacked>
 			<AppForm
 				initialValues={{
 					weight: "",

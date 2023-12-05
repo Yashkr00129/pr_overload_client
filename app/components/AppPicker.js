@@ -55,7 +55,7 @@ export default function AppPicker({
 			<Modal
 				visible={modalVisible}
 				animationType="slide">
-				<Screen stackDisplay>
+				<Screen stacked>
 					<Button
 						title="Close"
 						onPress={() => setModalVisible(false)}

@@ -33,7 +33,7 @@ export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 	};
 
 	return (
-		<Screen stackDisplay={true}>
+		<Screen stacked>
 			<ActivityIndicator visible={loading} />
 			<FlatList
 				data={exercises}

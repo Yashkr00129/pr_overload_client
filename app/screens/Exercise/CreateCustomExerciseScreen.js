@@ -32,7 +32,7 @@ export default function CreateCustomExerciseScreen({ route, navigation }) {
 	};
 
 	return (
-		<Screen stackDisplay={true}>
+		<Screen stacked={true}>
 			<AppForm
 				initialValues={{
 					name: "",

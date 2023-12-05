@@ -7,7 +7,7 @@ import useAuth from "../auth/useAuth";
 export default function ProfileScreen() {
 	const { logOut } = useAuth();
 	return (
-		<Screen>
+		<Screen stacked>
 			<AppButton
 				title="Log Out"
 				variant="contained"
