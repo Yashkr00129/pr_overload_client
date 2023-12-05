@@ -10,6 +10,7 @@ import useApi from "../../hooks/useApi";
 import exerciseApi from "../../api/exercise";
 import Screen from "../../components/Screen";
 import AppButton from "../../components/AppButton";
+import routes from "../../navigation/routes";
 
 export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 	const workout = route.params;
@@ -49,7 +50,10 @@ export default function AddExerciseToWorkoutScreen({ route, navigation }) {
 				)}
 				ItemSeparatorComponent={<ListItemSeperator />}
 			/>
-			<AppButton title={"Add Exercise"} />
+			<AppButton
+				title={"Add Exercise"}
+				onPress={() => navigation.navigate(routes.CREATE_CUSTOM_EXERCISE)}
+			/>
 		</Screen>
 	);
 }

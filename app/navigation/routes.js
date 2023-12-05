@@ -2,6 +2,7 @@
 export default Object.freeze({
 	ADD_EXERCISE_TO_WORKOUT: "Add Exercise",
 	ADD_SET_TO_WORKOUT: "Add Set",
+	CREATE_CUSTOM_EXERCISE: "Create Custom Exercise",
 	CREATE_PROFILE: "Create Profile",
 	HOME: "Home",
 	LOGIN: "Login",

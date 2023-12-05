@@ -22,6 +22,9 @@ const deleteSetFromWorkoutExercise = async (workoutId, exerciseId, setId) =>
 		`/overload/workouts/${workoutId}/exercises/${exerciseId}/sets/${setId}/`
 	);
 
+const createCustomExercise = async (payload) =>
+	apiClient.post("/overload/exercises/", payload);
+
 const exerciseApi = {
 	getAllExercises,
 	addExerciseToWorkout,
@@ -29,6 +32,7 @@ const exerciseApi = {
 	deleteExerciseFromWorkout,
 	addSetToWorkoutExercise,
 	deleteSetFromWorkoutExercise,
+	createCustomExercise,
 };
 
 export default exerciseApi;
