@@ -6,6 +6,7 @@ import EditWorkoutScreen from "../screens/Workout/EditWorkoutScreen";
 import AddExerciseToWorkoutScreen from "../screens/Workout/AddExerciseToWorkoutScreen";
 import AddSetToWorkoutExerciseScreen from "../screens/Workout/AddSetToWorkoutExerciseScreen";
 import CreateCustomExerciseScreen from "../screens/Exercise/CreateCustomExerciseScreen";
+import ManageCustomExercisesScreen from "../screens/Exercise/ManageCustomExercisesScreen";
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ const WorkoutNavigator = () => {
 				name={routes.CREATE_CUSTOM_EXERCISE}
 				component={CreateCustomExerciseScreen}
 			/>
+			
 		</Stack.Navigator>
 	);
 };

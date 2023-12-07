@@ -3,8 +3,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import routes from "./routes";
 import HomeScreen from "../screens/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
 import WorkoutNavigator from "./WorkoutNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +42,7 @@ const AppNavigator = () => {
 			/>
 			<Tab.Screen
 				name={routes.PROFILE}
-				component={ProfileScreen}
+				component={ProfileNavigator}
 				options={{
 					tabBarIcon: ({ color, size }) => (
 						<MaterialCommunityIcons
@@ -53,20 +53,6 @@ const AppNavigator = () => {
 					),
 				}}
 			/>
-			{/* <Tab.Screen
-				name={routes.FEED}
-				component={FeedNavigator}
-				options={{
-					tabBarIcon: ({ color, size }) => (
-						<MaterialCommunityIcons
-							name="home"
-							color={color}
-							size={size}
-						/>
-					),
-				}}
-			/>
-	*/}
 		</Tab.Navigator>
 	);
 };

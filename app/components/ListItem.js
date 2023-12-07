@@ -1,6 +1,5 @@
 import {
 	View,
-	Text,
 	StyleSheet,
 	Image,
 	TouchableHighlight,
