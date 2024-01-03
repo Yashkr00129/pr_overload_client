@@ -18,6 +18,7 @@ export default function ListItem({
 	onPress,
 	renderRightActions,
 	IconComponent,
+	disableChevron = false,
 }) {
 	return (
 		<Swipeable renderRightActions={renderRightActions}>
@@ -46,11 +47,13 @@ export default function ListItem({
 							</AppText>
 						)}
 					</View>
-					<MaterialCommunityIcons
-						name="chevron-right"
-						color={defaultStyles.colors.medium}
-						size={25}
-					/>
+					{!disableChevron && (
+						<MaterialCommunityIcons
+							name="chevron-right"
+							color={defaultStyles.colors.medium}
+							size={25}
+						/>
+					)}
 				</View>
 			</TouchableHighlight>
 		</Swipeable>

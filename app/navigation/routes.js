@@ -4,6 +4,7 @@ export default Object.freeze({
 	ADD_SET_TO_WORKOUT: "Add Set",
 	CREATE_CUSTOM_EXERCISE: "Create Custom Exercise",
 	CREATE_PROFILE: "Create Profile",
+	EDIT_PROFILE: "Edit Profile",
 	EXERCISES: "Exercises",
 	HOME: "Home",
 	LOGIN: "Login",

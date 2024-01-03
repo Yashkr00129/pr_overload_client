@@ -14,7 +14,7 @@ const AppNavigator = () => {
 			screenOptions={{
 				headerShown: false,
 			}}>
-			<Tab.Screen
+			{/* <Tab.Screen
 				name={routes.HOME}
 				component={HomeScreen}
 				options={{
@@ -26,7 +26,7 @@ const AppNavigator = () => {
 						/>
 					),
 				}}
-			/>
+			/> */}
 			<Tab.Screen
 				name={routes.WORKOUT}
 				component={WorkoutNavigator}

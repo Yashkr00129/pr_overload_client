@@ -3,7 +3,8 @@ import routes from "./routes";
 
 import ManageCustomExercisesScreen from "../screens/Exercise/ManageCustomExercisesScreen";
 import CreateCustomExerciseScreen from "../screens/Exercise/CreateCustomExerciseScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import ProfileScreen from "../screens/Profile/ProfileScreen";
+import EditProfileScreen from "../screens/Profile/EditProfileScreen";
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,10 @@ const ProfileNavigator = () => {
 			<Stack.Screen
 				name={routes.CREATE_CUSTOM_EXERCISE}
 				component={CreateCustomExerciseScreen}
+			/>
+			<Stack.Screen
+				name={routes.EDIT_PROFILE}
+				component={EditProfileScreen}
 			/>
 		</Stack.Navigator>
 	);
