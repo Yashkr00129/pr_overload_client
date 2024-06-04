@@ -3,7 +3,7 @@ import cache from "../utility/cache";
 import authStorage from "../auth/storage";
 
 const apiClient = create({
-	baseURL: "http://192.168.1.6:8000/",
+	baseURL: "https://meqrup44wv.ap-south-1.awsapprunner.com/",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {
@@ -13,7 +13,6 @@ apiClient.addAsyncRequestTransform(async (request) => {
 });
 
 const get = apiClient.get;
- 
 
 apiClient.get = async (url, params, axiosConfig) => {
 	const response = await get(url, params, axiosConfig);

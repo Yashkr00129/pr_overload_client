@@ -30,7 +30,7 @@ export default function RegisterScreen({ navigation }) {
 	const handleSubmit = async (values) => {
 		const res = await authApi.registerUser(values);
 
-		console.log(res.data);
+		console.log("Request Data", res.data);
 		if (!res.ok) return setRegisterFailed(true);
 
 		const result = await authApi.login(values.username, values.password);
@@ -114,7 +114,7 @@ export default function RegisterScreen({ navigation }) {
 						textContentType="password"
 					/>
 				</View>
-				<SubmitButton title={"Login"} />
+				<SubmitButton title={"Register"} />
 				<Text
 					style={[
 						{

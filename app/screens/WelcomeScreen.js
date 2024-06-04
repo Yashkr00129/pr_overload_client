@@ -19,6 +19,8 @@ export default function WelcomeScreen({ navigation }) {
 			<View style={styles.buttonsContainer}>
 				<AppButton
 					title="Login"
+					color="secondary"
+					variant="outlined"
 					onPress={() => navigation.navigate(routes.LOGIN)}
 				/>
 				<AppButton
